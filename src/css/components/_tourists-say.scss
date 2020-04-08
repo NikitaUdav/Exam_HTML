@@ -18,23 +18,33 @@
 }
 .card {
   display: flex;
+  flex-direction: column;
+  align-items: center;
   margin-bottom: 200px;
   background-color: $dark;
+  padding-bottom: 20px;
+  @media screen and (min-width: $screen-tablet) {
+    flex-direction: row;
+    padding-bottom: 0px;
+  }
   &__img-wrapper {
     position: relative;
     width: 100%;
-    max-width: 445px;
     flex-grow: 1;
     flex-shrink: 1;
     height: 0;
-    padding-bottom: 25.5%;
-  }
-  &__img {
+    padding-bottom: 35%;
+    @media screen and (min-width: $screen-tablet) {
+      max-width: 445px;
+      padding-bottom: 25.5%;
+    }
   }
   &__quote {
     width: 100%;
-    padding-top: 50px;
-    padding-left: 60px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 55px;
+    padding-right: 5px;
   }
   &__name {
     @include text($H350, 400, $grey-light);

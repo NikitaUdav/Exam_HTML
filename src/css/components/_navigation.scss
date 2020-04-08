@@ -1,0 +1,64 @@
+.navigation {
+  background-color: $blue;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 11;
+  &__container {
+    margin: 0 auto;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+  }
+  &__logo {
+    @include text($H500, 400, $white);
+    font-family: $secondary-font;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+  }
+  &__list {
+    @include flex(flex-start, center, column);
+    position: fixed;
+    top: 80px;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    padding: 32px 24px;
+    z-index: 10;
+    @media screen and (min-width: $screen-tablet) {
+      flex-direction: row;
+      position: static;
+      padding: 0;
+    }
+  }
+  &__item {
+    width: 70%;
+    height: 10%;
+    &:not(:last-child) {
+      margin-bottom: 40px;
+    }
+    @media screen and (min-width: $screen-tablet) {
+      margin: 0 auto;
+      &:not(:last-child) {
+        margin-right: 39px;
+        margin-bottom: 0px;
+      }
+    }
+  }
+  &__link {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    @include text($H100, 400, $darker);
+    text-transform: uppercase;
+    @media screen and (min-width: $screen-tablet) {
+      color: white;
+    }
+  }
+}

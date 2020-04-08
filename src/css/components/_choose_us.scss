@@ -8,18 +8,33 @@
   width: auto;
   &__container {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
     width: 100%;
     padding-top: 120px;
+    @media screen and (min-width: $screen-tablet) {
+      justify-content: space-between;
+      flex-direction: row;
+      align-items: flex-start;
+    }
   }
   &__article {
     text-align: justify;
     max-width: 533px;
+    margin-bottom: 40px;
+
+    @media screen and (min-width: $screen-tablet) {
+      margin-right: 20px;
+    }
   }
   &__title {
+    text-align: center;
     @include text($H600, 400, $white);
     padding-top: 80px;
     margin-bottom: 55px;
+    @media screen and (min-width: $screen-tablet) {
+      text-align: start;
+    }
   }
   &__text {
     @include text($H200, 400, $grey-light);
@@ -32,32 +47,10 @@
     }
   }
 }
-.link {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: $blue;
-  height: 60px;
-  max-width: 226px;
-  &__img {
-    z-index: 0;
-    position: absolute;
-    left: 0;
-  }
-  &__text {
-    @include text($H200, 400, $white);
-    text-transform: uppercase;
-    letter-spacing: 1.2px;
-    text-decoration: none;
-    position: relative;
-    z-index: 2;
-  }
-}
 
 .gallery {
   width: 100%;
-  margin-bottom: 122px;
+  margin-bottom: 102px;
   max-width: 475px;
   &__row {
     display: flex;
@@ -103,7 +96,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 230px;
+    max-width: 230px;
   }
   &__icon {
     margin-bottom: 29px;
@@ -120,6 +113,7 @@
     }
   }
   &__text {
+    text-align: center;
     @include text($H600, 400, $grey-light);
   }
 }
