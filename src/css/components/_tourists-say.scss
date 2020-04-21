@@ -1,8 +1,5 @@
 .tourists-say {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  @include flex(center, center, column);
   position: relative;
   padding-top: 118px;
   background-color: $darker-op;
@@ -17,9 +14,7 @@
   }
 }
 .card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  @include flex(flex-start, center, column);
   margin-bottom: 200px;
   background-color: $dark;
   padding-bottom: 20px;
@@ -54,16 +49,15 @@
     margin-bottom: 43px;
   }
   &__blockquote {
-    &::before {
-      content: "“";
-      font-size: 90px;
-      color: $blue;
-      float: left;
-    }
     @include text($H200, 400, $grey-light);
     font-family: $secondary-font;
     line-height: 26.6px;
     max-width: 555px;
     letter-spacing: -1px;
+  }
+  &__quotation-mark {
+    font-size: 45px;
+    color: $blue;
+    padding-right: 5px;
   }
 }

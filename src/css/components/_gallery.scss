@@ -1,0 +1,26 @@
+.gallery {
+  width: 100%;
+  margin-bottom: 102px;
+  max-width: 475px;
+  &__row {
+    display: flex;
+    max-height: 220px;
+    flex-grow: 1;
+    flex-shrink: 1;
+    &:not(:last-child) {
+      margin-bottom: 5px;
+    }
+    &:last-child {
+      justify-content: flex-end;
+    }
+  }
+  &__coll {
+    display: flex;
+    max-width: 350px;
+    position: relative;
+    height: 0;
+    padding-bottom: 46%;
+    flex-grow: 1;
+    flex-shrink: 1;
+  }
+}

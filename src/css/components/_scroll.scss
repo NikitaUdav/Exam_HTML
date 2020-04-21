@@ -1,15 +1,13 @@
 .scroll {
   margin: 0 auto;
   max-width: 110px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  margin-bottom: 20vh;
+  @include flex(center, center, column);
   text-decoration: none;
-  &:hover {
-    transition: all ease 0.3s;
-    transform: translateY(16px);
+  @media screen and (min-width: $screen-tablet) {
+    &:hover {
+      transition: all ease 0.3s;
+      transform: translateY(16px);
+    }
   }
   &__text {
     @include text($H100, 400, $white);

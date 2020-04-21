@@ -6,13 +6,14 @@
   left: 0;
   right: 0;
   z-index: 11;
+  height: 80px;
   &__container {
     margin: 0 auto;
     display: flex;
     width: 100%;
     justify-content: space-between;
     align-items: center;
-    height: 80px;
+    height: 100%;
   }
   &__logo {
     @include text($H500, 400, $white);
@@ -43,6 +44,7 @@
     }
     @media screen and (min-width: $screen-tablet) {
       margin: 0 auto;
+      width: inherit;
       &:not(:last-child) {
         margin-right: 39px;
         margin-bottom: 0px;
@@ -51,14 +53,17 @@
   }
   &__link {
     height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include flex(center, center);
     text-decoration: none;
     @include text($H100, 400, $darker);
+    text-align: center;
     text-transform: uppercase;
     @media screen and (min-width: $screen-tablet) {
       color: white;
+      transition: all ease 0.2s;
+      &:hover {
+        color: $dark;
+      }
     }
   }
 }
